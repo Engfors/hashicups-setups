@@ -23,28 +23,28 @@ variable "security_team" {
   description = "List of security team members"
 }
 
-variable "boundary_endpoint" {
-  type        = string
-  description = "Endpoint for Boundary cluster"
-}
+# variable "boundary_endpoint" {
+#   type        = string
+#   description = "Endpoint for Boundary cluster"
+# }
 
-variable "boundary_kms_recovery_key_id" {
-  type        = string
-  description = "AWS KMS recovery key ID for Boundary cluster"
-}
+# variable "boundary_kms_recovery_key_id" {
+#   type        = string
+#   description = "AWS KMS recovery key ID for Boundary cluster"
+# }
 
-variable "ecs_cluster" {
-  type        = string
-  description = "Name of AWS ECS cluster"
-}
+# variable "ecs_cluster" {
+#   type        = string
+#   description = "Name of AWS ECS cluster"
+# }
 
 data "aws_instances" "ecs" {
   instance_tags = {
-    "Cluster" = var.ecs_cluster
+    "Cluster" = local.ecs_cluster
   }
 }
 
-variable "product_database_address" {
-  type        = string
-  description = "Address of products PostgreSQL database"
-}
+# variable "product_database_address" {
+#   type        = string
+#   description = "Address of products PostgreSQL database"
+# }

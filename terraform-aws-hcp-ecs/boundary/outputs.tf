@@ -26,5 +26,5 @@ output "boundary_target_postgres" {
 }
 
 output "boundary_endpoint" {
-  value = var.boundary_endpoint
+  value = local.boundary_endpoint
 }

@@ -16,14 +16,13 @@ provider "aws" {
 }
 
 provider "boundary" {
-  addr             = var.boundary_endpoint
+  addr             = local.boundary_endpoint
   recovery_kms_hcl = <<EOT
 kms "awskms" {
 	purpose    = "recovery"
   region = "${var.region}"
 	key_id     = "global_root"
-  kms_key_id = "${var.boundary_kms_recovery_key_id}"
+  kms_key_id = "${local.boundary_kms_recovery_key_id}"
 }
 EOT
 }
-

@@ -33,7 +33,7 @@ resource "boundary_host" "products_database" {
   type            = "static"
   name            = "products_database"
   description     = "products database"
-  address         = var.product_database_address
+  address         = local.product_database_address
   host_catalog_id = boundary_host_catalog.products_database.id
 }
 
