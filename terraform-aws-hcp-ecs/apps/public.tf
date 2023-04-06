@@ -64,11 +64,11 @@ module "public_api" {
       local_bind_port  = local.product_api_port
     }
   ]
-  retry_join                     = [var.consul_attributes.consul_retry_join]
+  retry_join                     = [local.consul_attributes.consul_retry_join]
   tls                            = true
-  consul_server_ca_cert_arn      = var.consul_attributes.consul_server_ca_cert_arn
-  gossip_key_secret_arn          = var.consul_attributes.gossip_key_secret_arn
+  consul_server_ca_cert_arn      = local.consul_attributes.consul_server_ca_cert_arn
+  gossip_key_secret_arn          = local.consul_attributes.gossip_key_secret_arn
   acls                           = true
-  consul_client_token_secret_arn = var.consul_attributes.consul_client_token_secret_arn
-  acl_secret_name_prefix         = var.consul_attributes.acl_secret_name_prefix
+  consul_client_token_secret_arn = local.consul_attributes.consul_client_token_secret_arn
+  acl_secret_name_prefix         = local.consul_attributes.acl_secret_name_prefix
 }

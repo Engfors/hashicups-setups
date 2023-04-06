@@ -19,5 +19,5 @@ provider "aws" {
 }
 
 provider "consul" {
-  datacenter = var.consul_attributes.datacenter
+  datacenter = local.consul_attributes.datacenter
 }
